@@ -10,7 +10,7 @@ public class CreateUserUseCase {
         this.userRepository = userRepository;
     }
 
-    public UserEntity createBettor(UserEntity userEntity){
+    public UserEntity createUser(UserEntity userEntity){
         this.userRepository.findByEmail(userEntity.getEmail()).ifPresent(bettorEntity -> {
             throw new RuntimeException("User with this e-mail already exists");
         });
