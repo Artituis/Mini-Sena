@@ -12,8 +12,8 @@ import java.util.List;
 @RequestMapping("/bet")
 @Tag(name = "Bet", description = "Bet operations")
 public class BetController {
-    private CreateBetUseCase createBetUseCase;
-    private GetUserBetsUseCase getUserBetsUseCase;
+    private final CreateBetUseCase createBetUseCase;
+    private final GetUserBetsUseCase getUserBetsUseCase;
 
     public BetController(CreateBetUseCase createBetUseCase, GetUserBetsUseCase getUserBetsUseCase) {
         this.createBetUseCase = createBetUseCase;

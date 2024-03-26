@@ -9,7 +9,7 @@ import java.util.Map;
 
 @Service
 public class CreateBetUseCase {
-    private BetRepository betRepository;
+    private final BetRepository betRepository;
 
     public CreateBetUseCase(BetRepository betRepository) {
         this.betRepository = betRepository;

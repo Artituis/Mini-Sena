@@ -8,7 +8,7 @@ import java.util.List;
 
 @Service
 public class GetUserBetsUseCase {
-    private BetRepository betRepository;
+    private final BetRepository betRepository;
 
     public GetUserBetsUseCase(BetRepository betRepository) {
         this.betRepository = betRepository;
