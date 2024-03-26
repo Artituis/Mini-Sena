@@ -9,7 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
 
-@Entity(name = "user")
+@Entity(name = "bettor")
 @Data
 @Builder
 @AllArgsConstructor
