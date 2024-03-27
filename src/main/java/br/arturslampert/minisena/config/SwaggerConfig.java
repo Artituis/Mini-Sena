@@ -2,6 +2,7 @@ package br.arturslampert.minisena.config;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
+import io.swagger.v3.oas.models.security.SecurityScheme;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -12,8 +13,12 @@ public class SwaggerConfig {
     @Bean
     public OpenAPI openAPI(){
         return new OpenAPI()
-                .info(new Info().title("Mini-Sena").description("An API used to simulate a simple lottery system.").version("1"));
+                .info(new Info().title("Mini-Sena").description("An API used to simulate a simple lottery system.").version("1"))
+                .schemaRequirement("JWT", creaSecurityScheme());
     }
 
+    private SecurityScheme creaSecurityScheme() {
+        return new SecurityScheme().name("JWT").type(SecurityScheme.Type.HTTP).scheme("bearer").bearerFormat("JWT");
+    }
 
 }
