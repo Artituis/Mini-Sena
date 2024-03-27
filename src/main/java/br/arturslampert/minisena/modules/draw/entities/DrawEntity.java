@@ -1,4 +1,4 @@
-package br.arturslampert.minisena.modules.bet;
+package br.arturslampert.minisena.modules.draw.entities;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
@@ -7,25 +7,23 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 
-@Entity(name = "bet")
+@Entity(name = "draw")
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class BetEntity {
+public class DrawEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
 
-    @Column(name = "bettor_id")
-    private int bettorId;
-
-    @Column(name = "draw_id")
-    private int drawId;
+    @Enumerated(EnumType.STRING)
+    private DrawStatus status;
 
     @Size(min = 5, max = 5)
     private int[] numbers;
@@ -33,4 +31,8 @@ public class BetEntity {
     @CreationTimestamp
     private LocalDateTime createdAt;
 
+    @UpdateTimestamp
+    private LocalDateTime updatedAt;
+
 }
+

@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface BetRepository extends JpaRepository<BetEntity, Integer> {
     List<BetEntity> findByBettorId(int bettorId);
+    List<BetEntity> findByDrawId(int drawId);
 }
