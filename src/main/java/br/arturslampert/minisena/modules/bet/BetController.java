@@ -5,6 +5,10 @@ import br.arturslampert.minisena.modules.bet.dtos.CreateBetRequestDTO;
 import br.arturslampert.minisena.modules.bet.usecases.CreateBetUseCase;
 import br.arturslampert.minisena.modules.bet.usecases.GetUserBetsUseCase;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
@@ -29,6 +33,14 @@ public class BetController {
     @PreAuthorize(value = "hasRole('USER')")
     @SecurityRequirement(name = "JWT")
     @Operation(summary = "Bet creation", description = "Function used to create a new bet")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", content = {
+                    @Content(schema = @Schema(implementation = CreateBetResponseDTO.class))
+            }),
+            @ApiResponse(responseCode = "400", description = "Bets can't be places while numbers are being drawn"),
+            @ApiResponse(responseCode = "400", description = "Bet numbers have to be from 1 to 50"),
+            @ApiResponse(responseCode = "400", description = "Two bet numbers can't be equal"),
+    })
     public CreateBetResponseDTO create(@RequestBody CreateBetRequestDTO createBetRequestDTO, HttpServletRequest httpServletRequest){
         Object userId = httpServletRequest.getAttribute("user_id");
 
