@@ -15,7 +15,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class CreateBetUseCaseTest {
+class CreateBetUseCaseTest {
     @InjectMocks
     private CreateBetUseCase createBetUseCase;
     @Mock
@@ -24,7 +24,7 @@ public class CreateBetUseCaseTest {
     private GetCurrentDrawUseCase getCurrentDrawUseCase;
     @Test
     @DisplayName("Should not place bet while draw is being drawn")
-    public void should_not_place_bet_while_draw_is_being_drawn(){
+    void should_not_place_bet_while_draw_is_being_drawn(){
         DrawEntity draw = new DrawEntity();
         draw.setStatus(DrawStatus.DRAWING);
         when(getCurrentDrawUseCase.getDraw()).thenReturn(draw);
@@ -37,7 +37,7 @@ public class CreateBetUseCaseTest {
     }
     @Test
     @DisplayName("Should not place bet that has numbers < 1")
-    public void should_not_place_bet_that_has_numbers_less_then_one(){
+    void should_not_place_bet_that_has_numbers_less_then_one(){
         DrawEntity draw = new DrawEntity();
         draw.setStatus(DrawStatus.OPEN);
         when(getCurrentDrawUseCase.getDraw()).thenReturn(draw);
@@ -52,7 +52,7 @@ public class CreateBetUseCaseTest {
     }
     @Test
     @DisplayName("Should not place bet that has numbers > 50")
-    public void should_not_place_bet_that_has_numbers_more_then_fifty(){
+    void should_not_place_bet_that_has_numbers_more_then_fifty(){
         DrawEntity draw = new DrawEntity();
         draw.setStatus(DrawStatus.OPEN);
         when(getCurrentDrawUseCase.getDraw()).thenReturn(draw);
@@ -67,7 +67,7 @@ public class CreateBetUseCaseTest {
     }
     @Test
     @DisplayName("Should not place bet that has repeated numbers")
-    public void should_not_place_bet_that_has_repeated_numbers(){
+    void should_not_place_bet_that_has_repeated_numbers(){
         DrawEntity draw = new DrawEntity();
         draw.setStatus(DrawStatus.OPEN);
         when(getCurrentDrawUseCase.getDraw()).thenReturn(draw);
