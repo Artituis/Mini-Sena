@@ -20,11 +20,11 @@ public class CreateBetUseCase {
     }
 
     public BetEntity createBet(BetEntity betEntity){
-        checkNumbers(betEntity);
         var currentDraw = getCurrentDrawUseCase.getDraw();
         if (currentDraw.getStatus().equals(DrawStatus.DRAWING)){
             throw new RuntimeException("Bets can't be places while numbers are being drawn");
         }
+        checkNumbers(betEntity);
         betEntity.setDrawId(currentDraw.getId());
         return this.betRepository.save(betEntity);
     }
