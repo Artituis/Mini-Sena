@@ -1,8 +1,8 @@
 # Mini-Sena
 
-This is a project that simulates a simple lottery system. It is divided in 4 phases: the betting phase, the drawing phase, the review phase and the awarding phase.
-
 ## Description
+
+This is a project that simulates a simple lottery system. It is divided in 4 phases: the betting phase, the drawing phase, the review phase and the awarding phase.
 
 The obejective of this project is to create an API can be accessed to create multiple bets simultaneously by multiple users, using a relational database and creating tests for every feature.
 
@@ -10,22 +10,35 @@ The obejective of this project is to create an API can be accessed to create mul
 
 ### Login
 
-- [ ] Account Creation
-- [ ] Authentication
+- [X] Account Creation
+- [X] Authentication
 
 ### Bets
 
-- [ ] Manual bet creation
+- [X] Manual bet creation
 
 ### Draw
 
-- [ ] Drawing numbers
-- [ ] Multiples draws
+- [X] Drawing numbers
+- [X] Multiples draws
 
 ## Technologies
 
 - Spring Boot
 - Postgres
+
+## Things I Would Improve
+
+ - Have more tests
+ - Finish deploy
+
+## Database
+
+Using SpringJPA creating the database was simple, and with jakarta validating data was simple.
+
+### Database Schema
+
+![img_1.png](db_schema.png)
 
 ## Commit specification
 
