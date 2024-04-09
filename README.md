@@ -23,12 +23,6 @@ cd Mini-Sena
 Build the application:
 
 ```
-gradle clean build
-```
-
-If you don't have gradle installed use the wrapper instead:
-
-```
 ./gradlew clean build
 ```
 
@@ -39,12 +33,6 @@ docker compose up -d
 ```
 
 Run the application:
-
-```
-gradle bootRun
-```
-
-If you don't have gradle installed use the wrapper instead:
 
 ```
 ./gradlew bootRun
