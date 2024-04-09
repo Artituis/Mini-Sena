@@ -6,6 +6,50 @@ This is a project that simulates a simple lottery system. It is divided in 4 pha
 
 The obejective of this project is to create an API can be accessed to create multiple bets simultaneously by multiple users, using a relational database and creating tests for every feature.
 
+## How to run
+
+Clone the repository:
+
+```
+git clone https://github.com/Artituis/Mini-Sena.git
+```
+
+Navigate to project directory:
+
+```
+cd Mini-Sena
+```
+
+Build the application:
+
+```
+gradle clean build
+```
+
+If you don't have gradle installed use the wrapper instead:
+
+```
+./gradlew clean build
+```
+
+Start the database:
+
+```
+docker compose up -d
+```
+
+Run the application:
+
+```
+gradle bootRun
+```
+
+If you don't have gradle installed use the wrapper instead:
+
+```
+./gradlew bootRun
+```
+
 ## Features
 
 ### Login
@@ -22,6 +66,10 @@ The obejective of this project is to create an API can be accessed to create mul
 - [X] Drawing numbers
 - [X] Multiples draws
 
+### Documentation
+
+- [X] Full swagger documentation
+
 ## Technologies
 
 - Spring Boot
@@ -30,7 +78,7 @@ The obejective of this project is to create an API can be accessed to create mul
 ## Things I Would Improve
 
  - Have more tests
- - Finish deploy
+ - Finish application deploy
 
 ## Database
 
@@ -39,6 +87,10 @@ Using SpringJPA creating the database was simple, and with jakarta validating da
 ### Database Schema
 
 ![img_1.png](db_schema.png)
+
+## Documentation
+
+![image](https://github.com/Artituis/Mini-Sena/assets/110683450/07f87f06-422a-4fa0-a87d-4ee1d40202c8)
 
 ## Commit specification
 
